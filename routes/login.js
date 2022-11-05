@@ -9,11 +9,11 @@ router.post("/login", async (req, res) => {
   try {
     const username = req.body.email;
     const password = req.body.password;
-    console.log(req.body);
+    // console.log(req.body);
     const dev = await Developer.findOne({ email: username });
-    console.log(dev);
+    // console.log(dev);
     const passCheck = await bcrypt.compare(password, dev.password);
-    console.log(passCheck);
+    // console.log(passCheck);
     if (passCheck) {
       const token = jwt.sign({ username: username }, "jwtsecret", {
         expiresIn: "10m",

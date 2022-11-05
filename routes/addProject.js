@@ -5,14 +5,16 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 
-router.post("/newProject", async (req, res) => {
+router.post("/newProject/:devId", async (req, res) => {
   console.log(req.body);
   const appName = req.body.appName;
   const appDes = req.body.appDescription;
-  const clientId = Math.floor(Math.random() * 100000);
-  const clientSecret = Math.floor(Math.random() * 100000);
+  const devId = req.params.devId;
+  console.log(devId);
+  const clientId = Math.random().toString(36).substring(4);
+  const clientSecret = Math.random().toString(36).substring(4);
   const update = await Developer.updateOne(
-    { _id: "6365260b5d302960bf8a9e0c" },
+    { _id: devId },
     {
       $push: {
         apps: {
@@ -27,7 +29,8 @@ router.post("/newProject", async (req, res) => {
     }
   );
   console.log(update);
-  const dev = await Developer.findOne({ _id: "6365260b5d302960bf8a9e0c" });
+  const dev = await Developer.findOne({ _id: devId });
+  console.log(dev);
   res.json({
     appName: appName,
     devId: dev._id,
