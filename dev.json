@@ -1,0 +1,36 @@
+{
+  "dev": [
+    {
+      "devId": "6365c8550dc29c88d19b88c4",
+      "name": "abhishek",
+      "email": "abhishekpandey@gmail.com",
+      "password": "$2b$10$Qp2QSliiQYTUywZBXz3GgO0cJ35keJdUhtRKDJZed.cSzAbR6blI.",
+      "apps": [
+        {
+          "appname": "Fast-af",
+          "appDes": "Fast-af server",
+          "lang": "Node.js",
+          "appCreds": {
+            "clientId": "gh5sd1gtb",
+            "clientSecret": "qycxxsg96"
+          },
+          "users": [],
+          "requests": [
+            "6365c8550dc29c88d19b88c4-6365db7d82516e33afaf1a3c-abhishekpandey3188@gmail.com"
+          ]
+        },
+        {
+          "appname": "test2",
+          "appDes": "test app",
+          "lang": "Node.js",
+          "appCreds": {
+            "clientId": "gh5sd1gyu",
+            "clientSecret": "qycxxsyui"
+          },
+          "users": {},
+          "requests": {}
+        }
+      ]
+    }
+  ]
+}

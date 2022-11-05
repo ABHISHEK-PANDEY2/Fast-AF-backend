@@ -5,11 +5,12 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 
-router.get("/mobileAuthTest", async (req, res) => {
+router.get("/mobileAuthTest/:token", async (req, res) => {
   //   console.log(req.body);
-  const token = req.header("token");
+  const token = req.params.token;
   console.log(token);
   const [devId, appId, userId] = token.split("-");
+
   let dev = await Developer.findOne({ _id: devId });
   dev.apps.map((app) => {
     if (app._id === appId) {

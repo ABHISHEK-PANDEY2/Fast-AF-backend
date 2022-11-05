@@ -28,7 +28,7 @@ app.use(loginRouter);
 app.use(serverInitRouter);
 app.use(newprojecteRouter);
 app.use(appListRouter);
-// app.use(streamRouter);
+app.use(streamRouter);
 app.use(mobileAuthRouter);
 app.use(requestAuthRouter);
 
